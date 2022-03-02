@@ -1,15 +1,28 @@
 {
-  "name": "coffee-shop-tech",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  }
+	"name": "coffee-shop-tech",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"updateAppsyncOperationsForBackendLambda": "babel src/graphql --config-file ./babel.config.json -d ./amplify/backend/function/coffeeFromEB/src/graphql/ && amplify push function -y"
+	},
+	"dependencies": {
+		"@aws-amplify/ui-react": "^2.6.2",
+		"@aws-cdk/aws-events": "^1.124.0",
+		"@aws-cdk/aws-events-targets": "^1.124.0",
+		"@aws-cdk/aws-location": "^1.124.0",
+		"aws-amplify": "^4.3.15",
+		"maplibre-gl": "^1.15.2",
+		"maplibre-gl-js-amplify": "^1.2.5",
+		"next": "12.1.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.17.6",
+		"@babel/core": "^7.17.5",
+		"@babel/preset-env": "^7.16.11"
+	}
 }

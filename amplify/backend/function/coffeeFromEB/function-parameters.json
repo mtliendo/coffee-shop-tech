@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "api": {
+      "coffeeshoptech": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

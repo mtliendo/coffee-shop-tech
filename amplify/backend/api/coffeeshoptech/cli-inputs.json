@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "coffeeshoptech",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/mtliendo/Develop/coffee-shop-tech/amplify/backend/api/coffeeshoptech/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcoffeeshoptech93a80e35"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

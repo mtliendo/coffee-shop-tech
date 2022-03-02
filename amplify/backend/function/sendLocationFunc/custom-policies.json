@@ -1,0 +1,6 @@
+[
+	{
+		"Action": ["geo:BatchUpdateDevicePosition"],
+		"Resource": ["arn:aws:geo:*:*:tracker/coffeeShopDeviceTracker"]
+	}
+]

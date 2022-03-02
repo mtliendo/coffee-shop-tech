@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "coffeeshoptech",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcoffeeshoptech93a80e35",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

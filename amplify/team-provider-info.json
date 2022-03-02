@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coffeeshoptech-dev-123821-authRole",
+      "UnauthRoleArn": "arn:aws:iam::936471194299:role/amplify-coffeeshoptech-dev-123821-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::936471194299:role/amplify-coffeeshoptech-dev-123821-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-coffeeshoptech-dev-123821-deployment",
+      "UnauthRoleName": "amplify-coffeeshoptech-dev-123821-unauthRole",
+      "StackName": "amplify-coffeeshoptech-dev-123821",
+      "StackId": "arn:aws:cloudformation:us-east-1:936471194299:stack/amplify-coffeeshoptech-dev-123821/c8d794a0-998e-11ec-a8d6-0eefe24532fb",
+      "AmplifyAppId": "d2vawmzv17eopf"
+    },
+    "categories": {
+      "auth": {
+        "coffeeshoptech93a80e35": {}
+      },
+      "function": {
+        "sendLocationFunc": {
+          "deploymentBucketName": "amplify-coffeeshoptech-dev-123821-deployment",
+          "s3Key": "amplify-builds/sendLocationFunc-3862766e2f2b546d6450-build.zip"
+        },
+        "coffeeFromEB": {
+          "deploymentBucketName": "amplify-coffeeshoptech-dev-123821-deployment",
+          "s3Key": "amplify-builds/coffeeFromEB-42347134795059786353-build.zip"
+        }
+      }
+    }
+  }
+}

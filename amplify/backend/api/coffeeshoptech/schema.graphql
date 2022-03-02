@@ -1,0 +1,47 @@
+type Product
+	@model
+	@auth(
+		rules: [
+			{ allow: private, operations: [read] }
+			{ allow: groups, groups: ["employee"] }
+		]
+	) {
+	id: ID!
+	name: String!
+	price: Float!
+	src: AWSURL!
+}
+
+type Order
+	@model
+	@auth(
+		rules: [
+			{ allow: private, operations: [create] }
+			{ allow: groups, groups: ["employee"], operations: [read] }
+			# EventBridge will automatically call this lambda function to update orders
+			{ allow: private, provider: iam, operations: [read, update] }
+		]
+	) {
+	id: ID!
+	products: [String!]! #They already paid, so we just need the product name(s)
+	status: ORDER_STATUS!
+	customerName: String!
+}
+
+enum ORDER_STATUS {
+	PROCESSED # The customer just clicked the "buy" button
+	NEEDS_FULFILLED # The customer just entered a geofence
+	FULFILLED #The employee gave the customer their order
+}
+
+input SendLocationInput {
+	username: String!
+	longitude: Float!
+	latitude: Float!
+	orderId: String! # If the customer is nearby, update the order with this ID to 'NEEDS_FULFILLED'
+}
+
+type Mutation {
+	sendLocation(input: SendLocationInput): String
+		@function(name: "sendLocationFunc-${env}")
+}
